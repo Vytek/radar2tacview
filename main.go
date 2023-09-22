@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math"
 	"os"
 	"strconv"
 	"time"
 
 	"github.com/gocarina/gocsv"
+	geo "github.com/rbsns/golang-geo"
 	"github.com/scylladb/termtables"
 )
 
@@ -16,6 +18,9 @@ const Version = "0.0.1"
 
 // Constans
 const DM = 1.828 //https://en.wikipedia.org/wiki/Data_mile Km
+// http://wikimapia.org/25820161/it/Centro-Radar-Poggio-Ballone
+const lat_RadarPB = 42.82638889  // Coordinate:   42°49'35"N   10°53'3"E
+const long_RadarPB = 10.88416667 //
 
 type TargetCSV struct { // Our example struct, you can use "-" to ignore a field
 	TIME  string `csv:"TIME"`
@@ -101,13 +106,21 @@ func main() {
 	}
 
 	table := termtables.CreateTable()
-	table.AddHeaders("X", "Y", "Distance")
+	table.AddHeaders("TIME", "X", "Y", "Distance from PB Radar", "Bearing to PB Radar", "Lat", "Long")
 	//Load targets from file and add to list //DEBUG
 	for _, target := range targets {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
 		distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
-		table.AddRow(fmt.Sprintf("%f", s_X), fmt.Sprintf("%f", s_Y), fmt.Sprintf("%f", distancePB))
+		bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
+		//New Lat, Long Position
+		p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
+		new_p := p_radarPB.PointAtDistanceAndBearing(distancePB, bearingPB)
+		//dmsCoordinate, err := dms.New(dms.LatLon{Latitude: new_p.Lat(), Longitude: new_p.Lng()})
+		if err != nil {
+			log.Fatal(err)
+		}
+		table.AddRow(target.TIME, fmt.Sprintf("%.2f", s_X), fmt.Sprintf("%.2f", s_Y), fmt.Sprintf("%.2f", distancePB), fmt.Sprintf("%.2f", bearingPB), new_p.Lat(), new_p.Lng())
 	}
 	fmt.Println(table.Render())
 }
