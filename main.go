@@ -106,7 +106,7 @@ func main() {
 	}
 
 	table := termtables.CreateTable()
-	table.AddHeaders("TIME", "X", "Y", "Distance from PB Radar", "Bearing to PB Radar", "Lat", "Long")
+	table.AddHeaders("TIME", "X", "Y", "Distance from PB Radar", "Bearing to PB Radar", "Lat", "Long", "Lat °/Long °")
 	//Load targets from file and add to list //DEBUG
 	for _, target := range targets {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
@@ -116,11 +116,11 @@ func main() {
 		//New Lat, Long Position
 		p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
 		new_p := p_radarPB.PointAtDistanceAndBearing(distancePB, bearingPB)
-		//dmsCoordinate, err := dms.New(dms.LatLon{Latitude: new_p.Lat(), Longitude: new_p.Lng()})
+		dmsCoordinate, err := New(LatLon{Latitude: new_p.Lat(), Longitude: new_p.Lng()})
 		if err != nil {
 			log.Fatal(err)
 		}
-		table.AddRow(target.TIME, fmt.Sprintf("%.2f", s_X), fmt.Sprintf("%.2f", s_Y), fmt.Sprintf("%.2f", distancePB), fmt.Sprintf("%.2f", bearingPB), new_p.Lat(), new_p.Lng())
+		table.AddRow(target.TIME, fmt.Sprintf("%.2f", s_X), fmt.Sprintf("%.2f", s_Y), fmt.Sprintf("%.2f", distancePB), fmt.Sprintf("%.2f", bearingPB), new_p.Lat(), new_p.Lng(), dmsCoordinate.String())
 	}
 	fmt.Println(table.Render())
 }
