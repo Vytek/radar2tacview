@@ -153,7 +153,7 @@ func main() {
 	dateTimeST, _ := jodaTime.Parse("HHmmss", ST)
 	fmt.Println(dateTimeST)
 	var strTimeToWrite string
-	var sumDuration time.Duration
+	var sumDuration int32
 	for _, target := range targets {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
@@ -170,8 +170,9 @@ func main() {
 		//Time Next
 		dateTimeNow, _ := jodaTime.Parse("HHmmss", target.TIME) //Read TIME from CSV
 		if dateTimeNow.After(dateTimeST) {
-			sumDuration = sumDuration + dateTimeNow.Sub(dateTimeST)
-			strTimeToWrite = fmt.Sprintf("#%s.%s\n", Float64ToTimeString(sumDuration.Minutes()), Float64ToTimeString(float64(sumDuration.Seconds())))
+			sumDuration = sumDuration + int32(dateTimeNow.Sub(dateTimeST).Seconds()) //TODO: Ricontrollare tutti i tempi!
+			strTimeToWrite = fmt.Sprintf("#%s.%s\n", IntToString(int(sumDuration)), "00")
+			dateTimeST = dateTimeNow
 			//strTimeToWrite = fmt.Sprintf("#%s.%s\n", Float64ToTimeString(dateTimeNow.Sub(dateTimeST).Minutes()), Float64ToTimeString(dateTimeNow.Sub(dateTimeST).Seconds()))
 		}
 		_, _ = f.WriteString(strTimeToWrite)
