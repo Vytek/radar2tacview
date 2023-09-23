@@ -127,7 +127,8 @@ func main() {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
 		distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
-		bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
+		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
+		bearingPB := ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 180.0
 		//New Lat, Long Position
 		p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
 		new_p := p_radarPB.PointAtDistanceAndBearing(distancePB, bearingPB)
@@ -160,7 +161,8 @@ func main() {
 		s_ALT, _ := strconv.ParseFloat(target.ALT, 64)
 		s_ALT = feet2meters(s_ALT) //Feet To Meters (ASL)
 		distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
-		bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
+		bearingPB := ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 180.0
+		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
 		//New Lat, Long Position
 		p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
 		new_p := p_radarPB.PointAtDistanceAndBearing(distancePB, bearingPB)
