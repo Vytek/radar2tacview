@@ -153,6 +153,7 @@ func main() {
 	dateTimeST, _ := jodaTime.Parse("HHmmss", ST)
 	fmt.Println(dateTimeST)
 	var strTimeToWrite string
+	var sumDuration time.Duration
 	for _, target := range targets {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
@@ -167,16 +168,15 @@ func main() {
 			log.Fatal(err)
 		}
 		//Time Next
-		dateTimeNow, _ := jodaTime.Parse("HHmmss", target.TIME)
+		dateTimeNow, _ := jodaTime.Parse("HHmmss", target.TIME) //Read TIME from CSV
 		if dateTimeNow.After(dateTimeST) {
-			strTimeToWrite = fmt.Sprintf("#%s.%s\n", Float64ToTimeString(dateTimeNow.Sub(dateTimeST).Minutes()), Float64ToTimeString(dateTimeNow.Sub(dateTimeST).Seconds()))
-			dateTimeST = dateTimeNow
-		} else {
-			strTimeToWrite = fmt.Sprintf("#%s.%s\n", Float64ToTimeString(dateTimeNow.Sub(dateTimeST).Minutes()), Float64ToTimeString(dateTimeNow.Sub(dateTimeST).Seconds()))
+			sumDuration = sumDuration + dateTimeNow.Sub(dateTimeST)
+			strTimeToWrite = fmt.Sprintf("#%s.%s\n", Float64ToTimeString(sumDuration.Minutes()), Float64ToTimeString(float64(sumDuration.Seconds())))
+			//strTimeToWrite = fmt.Sprintf("#%s.%s\n", Float64ToTimeString(dateTimeNow.Sub(dateTimeST).Minutes()), Float64ToTimeString(dateTimeNow.Sub(dateTimeST).Seconds()))
 		}
 		_, _ = f.WriteString(strTimeToWrite)
 		//Coodinates
-		strToWrite := fmt.Sprintf("1000102,T=%s|%s|%s,Name=AJ024\n", Float64ToString(new_p.Lat()), Float64ToString(new_p.Lng()), Float64ToString(s_ALT))
+		strToWrite := fmt.Sprintf("1000102,T=%s|%s|%s,Name=C130,Squawk=AJ024\n", Float64ToString(new_p.Lng()), Float64ToString(new_p.Lat()), Float64ToString(s_ALT))
 		_, _ = f.WriteString(strToWrite)
 	}
 
