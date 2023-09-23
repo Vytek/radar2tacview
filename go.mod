@@ -15,5 +15,6 @@ require (
 	github.com/lib/pq v1.10.9 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
+	github.com/vjeantet/jodaTime v1.0.0
 	github.com/ziutek/mymysql v1.5.4 // indirect
 )
