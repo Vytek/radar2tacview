@@ -127,22 +127,29 @@ func main() {
 	}
 
 	table := termtables.CreateTable()
-	table.AddHeaders("TIME", "X", "Y", "Distance from PB Radar", "Bearing to PB Radar", "Lat", "Long", "Lat °/Long °")
+	table.AddHeaders("TIME", "X", "Y", "Distance from PB Radar", "Bearing to PB Radar", "Bearing", "sqrt", "Lat", "Long", "Lat °/Long °")
 	//Load targets from file and add to list //DEBUG
 	for _, target := range targets {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
 		distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
 		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
-		var bearingPB float64
+		var bearingPB_s float64 = 0.0
+		var bearingPB float64 = 0.0
+		var sqrt float64
+		//acos(100.77 / sqrt((100.77^2) + (67.48^2))) = 33.807995 degree
+		//cos^(-1)(100.77/sqrt(100.77^2 + 67.48^2)) Wolfram TEST
+		sqrt = (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2)))
+		//bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
+		bearingPB_s = (math.Acos(math.Abs(s_Y) / sqrt))
 		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
-			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 270.0
+			bearingPB = bearingPB_s + 270.0
 		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
-			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 180.0
+			bearingPB = bearingPB_s + 180.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == true) {
-			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 90.0
+			bearingPB = bearingPB_s + 90.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
-			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi)
+			bearingPB = bearingPB_s
 		}
 
 		//New Lat, Long Position
@@ -152,7 +159,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		table.AddRow(target.TIME, fmt.Sprintf("%.2f", s_X), fmt.Sprintf("%.2f", s_Y), fmt.Sprintf("%.2f", distancePB), fmt.Sprintf("%.2f", bearingPB), new_p.Lat(), new_p.Lng(), dmsCoordinate.String())
+		table.AddRow(target.TIME, fmt.Sprintf("%.2f", s_X), fmt.Sprintf("%.2f", s_Y), fmt.Sprintf("%.2f", distancePB), fmt.Sprintf("%.2f", bearingPB), Float64ToString(bearingPB_s), Float64ToString(sqrt), Float64ToString(new_p.Lat()), Float64ToString(new_p.Lng()), dmsCoordinate.String())
 	}
 	fmt.Println(table.Render())
 
