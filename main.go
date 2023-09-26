@@ -182,7 +182,7 @@ func main() {
 	_, _ = f.WriteString(GIOF)
 	//Create data
 	dateTimeST, _ := jodaTime.Parse("HHmmss", ST)
-	fmt.Println(dateTimeST)
+	//fmt.Println(dateTimeST) //DEBUG
 	var strTimeToWrite string
 	var sumDuration int32
 	for _, target := range targets {
@@ -193,6 +193,7 @@ func main() {
 		//distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
 		distancePB_m := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DMM
 		var bearingPB float64
+		//bearingPB = (math.Atan(math.Abs(s_X) / math.Abs(s_Y))) //ATAN
 		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
 			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 270.0
 		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
@@ -202,7 +203,7 @@ func main() {
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
 			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi)
 		}
-		bearingPB = bearingPB - 1.0 //Correction?
+		//bearingPB = bearingPB - 1.0 //Correction?
 		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
 		//New Lat, Long Position
 		//p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
