@@ -20,8 +20,14 @@ const Version = "0.0.1"
 // Constans
 const DM = 1.828 //https://en.wikipedia.org/wiki/Data_mile Km
 // http://wikimapia.org/25820161/it/Centro-Radar-Poggio-Ballone
-const lat_RadarPB = 42.82638889  // Coordinate:   42°49'35"N   10°53'3"E
-const long_RadarPB = 10.88416667 //
+// const lat_RadarPB = 42.82638889  // Coordinate:   42°49'35"N   10°53'3"E
+// const long_RadarPB = 10.88416667 //
+// New coordinate Poggio Ballone calcolate usando Maps ed identificando proprio il RADAR
+// const lat_RadarPB = 42.828997
+// const long_RadarPB = 10.880370
+const lat_RadarPB = 37.827630 //Marsala
+const long_RadarPB = 12.537120
+
 // Start time
 const ST = "180000"
 
@@ -108,7 +114,7 @@ func feet2meters(feet float64) float64 {
 
 func main() {
 	//LoadCSV
-	csvFile, err := os.OpenFile("data/AJ024.csv", os.O_RDWR|os.O_CREATE, os.ModePerm)
+	csvFile, err := os.OpenFile("data/AJ024M.csv", os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		panic(err)
 	}
@@ -128,7 +134,17 @@ func main() {
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
 		distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
 		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
-		bearingPB := ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 180.0
+		var bearingPB float64
+		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
+			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 270.0
+		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
+			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 180.0
+		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == true) {
+			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 90.0
+		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
+			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi)
+		}
+
 		//New Lat, Long Position
 		p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
 		new_p := p_radarPB.PointAtDistanceAndBearing(distancePB, bearingPB)
@@ -143,7 +159,7 @@ func main() {
 	//Create and save acmi file (TacView)
 	BOF := "FileType=text/acmi/tacview\nFileVersion=2.2\n"
 	GIOF := "0,Author=Enrico Speranza\n0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136\n0,ReferenceTime=1980-06-27T18:00:00Z\n"
-	f, err := os.Create("data/nearadaractivity19800627180000Z.acmi")
+	f, err := os.Create("data/nearadaractivity19800627180000ZMA.acmi")
 	if err != nil {
 		panic(err)
 	}
@@ -161,7 +177,16 @@ func main() {
 		s_ALT, _ := strconv.ParseFloat(target.ALT, 64)
 		s_ALT = feet2meters(s_ALT) //Feet To Meters (ASL)
 		distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
-		bearingPB := ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 180.0
+		var bearingPB float64
+		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
+			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 270.0
+		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
+			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 180.0
+		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == true) {
+			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 90.0
+		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
+			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi)
+		}
 		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
 		//New Lat, Long Position
 		p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
