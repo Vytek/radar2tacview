@@ -202,7 +202,7 @@ func main() {
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
 			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi)
 		}
-		bearingPB = bearingPB - 1.0
+		bearingPB = bearingPB - 1.0 //Correction?
 		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
 		//New Lat, Long Position
 		//p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
