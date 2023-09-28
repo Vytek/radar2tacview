@@ -118,7 +118,7 @@ func feet2meters(feet float64) float64 {
 
 func main() {
 	//LoadCSV
-	csvFile, err := os.OpenFile("data/AJ024.csv", os.O_RDWR|os.O_CREATE, os.ModePerm)
+	csvFile, err := os.OpenFile("data/LL464.csv", os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		panic(err)
 	}
@@ -138,13 +138,14 @@ func main() {
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
 		distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
 		distancePB_m := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DMM
-		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
 		var bearingPB_s float64 = 0.0
 		var bearingPB float64 = 0.0
 		var sqrt float64 = 0.0
 		sqrt = (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2)))
 		//fmt.Println(Float32ToString(s_Y)) //DEBUG
 		bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
+		//bearingPB_s = (90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi))
+		//bearingPB_s = (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)
 		//fmt.Println(math.Acos(math.Abs(s_Y) / sqrt)) //DEBUG
 		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
 			bearingPB = bearingPB_s + 270.0
@@ -173,7 +174,7 @@ func main() {
 	//Create and save acmi file (TacView)
 	BOF := "FileType=text/acmi/tacview\nFileVersion=2.2\n"
 	GIOF := "0,Author=Enrico Speranza\n0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136\n0,ReferenceTime=1980-06-27T18:00:00Z\n"
-	f, err := os.Create("data/nearadaractivity19800627180000ZVincety.acmi")
+	f, err := os.Create("data/nearadaractivity19800627180000ZLL464Vincety.acmi")
 	if err != nil {
 		panic(err)
 	}
@@ -192,16 +193,25 @@ func main() {
 		s_ALT = feet2meters(s_ALT) //Feet To Meters (ASL)
 		//distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
 		distancePB_m := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DMM
-		var bearingPB float64
-		//bearingPB = (math.Atan(math.Abs(s_X) / math.Abs(s_Y))) //ATAN
+		var bearingPB_s float64 = 0.0
+		var bearingPB float64 = 0.0
+		var sqrt float64 = 0.0
+		sqrt = (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2)))
+		//fmt.Println(Float32ToString(s_Y)) //DEBUG
+		bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
+		//bearingPB_s = (90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi))
+		//bearingPB_s = (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)
+		//fmt.Println(math.Acos(math.Abs(s_Y) / sqrt)) //DEBUG
+
+		//WARNING: could be: 360-tan^-1(85.20/94.31)*180/3.1415
 		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
-			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 270.0
+			bearingPB = bearingPB_s + 270.0
 		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
-			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 180.0
+			bearingPB = bearingPB_s + 180.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == true) {
-			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi) + 90.0
+			bearingPB = bearingPB_s + 90.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
-			bearingPB = ((math.Acos(math.Abs(s_Y) / (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))))) * 180 / math.Pi)
+			bearingPB = bearingPB_s
 		}
 		//bearingPB = bearingPB - 1.0 //Correction?
 		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
@@ -221,7 +231,7 @@ func main() {
 		}
 		_, _ = f.WriteString(strTimeToWrite)
 		//Coodinates
-		strToWrite := fmt.Sprintf("1000102,T=%s|%s|%s,Name=C130,Squawk=AJ024\n", Float64ToString(r.Lon2), Float64ToString(r.Lat2), Float64ToString(s_ALT))
+		strToWrite := fmt.Sprintf("1000105,T=%s|%s|%s,Name=F104,Squawk=LL464\n", Float64ToString(r.Lon2), Float64ToString(r.Lat2), Float64ToString(s_ALT))
 		_, _ = f.WriteString(strToWrite)
 	}
 
