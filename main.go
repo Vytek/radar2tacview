@@ -143,17 +143,24 @@ func main() {
 		var sqrt float64 = 0.0
 		sqrt = (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2)))
 		//fmt.Println(Float32ToString(s_Y)) //DEBUG
-		bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
 		//bearingPB_s = (90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi))
 		//bearingPB_s = (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)
 		//fmt.Println(math.Acos(math.Abs(s_Y) / sqrt)) //DEBUG
 		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
+			//- +
+			bearingPB_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
 			bearingPB = bearingPB_s + 270.0
 		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
+			// - -
+			bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
 			bearingPB = bearingPB_s + 180.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == true) {
+			//+ -
+			bearingPB_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
 			bearingPB = bearingPB_s + 90.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
+			//+ +
+			bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
 			bearingPB = bearingPB_s
 		}
 
@@ -174,7 +181,8 @@ func main() {
 	//Create and save acmi file (TacView)
 	BOF := "FileType=text/acmi/tacview\nFileVersion=2.2\n"
 	GIOF := "0,Author=Enrico Speranza\n0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136\n0,ReferenceTime=1980-06-27T18:00:00Z\n"
-	f, err := os.Create("data/nearadaractivity19800627180000ZLL464Vincety.acmi")
+	//Open with name
+	f, err := os.Create("data/nearadaractivity19800627180000ZLL464Cos4Vincety.acmi")
 	if err != nil {
 		panic(err)
 	}
@@ -198,19 +206,27 @@ func main() {
 		var sqrt float64 = 0.0
 		sqrt = (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2)))
 		//fmt.Println(Float32ToString(s_Y)) //DEBUG
-		bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
+		//bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
 		//bearingPB_s = (90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi))
 		//bearingPB_s = (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)
 		//fmt.Println(math.Acos(math.Abs(s_Y) / sqrt)) //DEBUG
 
-		//WARNING: could be: 360-tan^-1(85.20/94.31)*180/3.1415
+		//WARNING: could be: 360-tan^-1(85.20/94.31)*180/3.1415 NO, doesn't works!
 		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
+			// -X +Y
+			bearingPB_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
 			bearingPB = bearingPB_s + 270.0
 		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
+			// -X -Y
+			bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
 			bearingPB = bearingPB_s + 180.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == true) {
+			// +X -Y
+			bearingPB_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
 			bearingPB = bearingPB_s + 90.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
+			// +X +Y
+			bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
 			bearingPB = bearingPB_s
 		}
 		//bearingPB = bearingPB - 1.0 //Correction?
