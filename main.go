@@ -16,7 +16,7 @@ import (
 )
 
 // Version
-const Version = "0.0.1"
+const Version = "0.0.2"
 
 // Constans
 const DM = 1.828   //https://en.wikipedia.org/wiki/Data_mile Km
@@ -29,8 +29,8 @@ const DMM = 1828.0 //Meters
 const lat_RadarPB = 42.828997
 const long_RadarPB = 10.880370
 
-//const lat_RadarPB = 37.827630 //Marsala
-//const long_RadarPB = 12.537120
+const lat_RadarMA = 37.827630 //Marsala
+const long_RadarMA = 12.537120
 
 // Start time
 const ST = "180000"
@@ -117,8 +117,13 @@ func feet2meters(feet float64) float64 {
 }
 
 func main() {
+	//Load Args
+	argsWithoutProg := os.Args[1:]
+	//<cmd> LL464.csv P|M F104 1000105
+	//<cmd> LL464.csv P|M F104 1000105
 	//LoadCSV
-	csvFile, err := os.OpenFile("data/LL464.csv", os.O_RDWR|os.O_CREATE, os.ModePerm)
+	//fmt.Println("data/" + argsWithoutProg[0]) //DEBUG
+	csvFile, err := os.OpenFile("data/"+argsWithoutProg[0], os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		panic(err)
 	}
@@ -131,15 +136,15 @@ func main() {
 	}
 
 	table := termtables.CreateTable()
-	table.AddHeaders("TIME", "X", "Y", "Distance from PB Radar", "Bearing to PB Radar", "Bearing", "Lat", "Long", "Lat V", "Long V")
+	table.AddHeaders("TIME", "X", "Y", "Distance from Radar", "Bearing to Radar", "Bearing", "Lat", "Long", "Lat V", "Long V")
 	//Load targets from file and add to list //DEBUG
 	for _, target := range targets {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
-		distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
-		distancePB_m := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DMM
-		var bearingPB_s float64 = 0.0
-		var bearingPB float64 = 0.0
+		distance := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
+		distance_m := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DMM
+		var bearing_s float64 = 0.0
+		var bearing float64 = 0.0
 		var sqrt float64 = 0.0
 		sqrt = (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2)))
 		//fmt.Println(Float32ToString(s_Y)) //DEBUG
@@ -148,33 +153,43 @@ func main() {
 		//fmt.Println(math.Acos(math.Abs(s_Y) / sqrt)) //DEBUG
 		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
 			//- +
-			bearingPB_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
-			bearingPB = bearingPB_s + 270.0
+			bearing_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
+			bearing = bearing_s + 270.0
 		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
 			// - -
-			bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
-			bearingPB = bearingPB_s + 180.0
+			bearing_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
+			bearing = bearing_s + 180.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == true) {
 			//+ -
-			bearingPB_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
-			bearingPB = bearingPB_s + 90.0
+			bearing_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
+			bearing = bearing_s + 90.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
 			//+ +
-			bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
-			bearingPB = bearingPB_s
+			bearing_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
+			bearing = bearing_s
+		}
+
+		//Choose Radar
+		var lat_Radar, long_Radar float64
+		if argsWithoutProg[1] == "P" {
+			lat_Radar = lat_RadarPB
+			long_Radar = long_RadarPB
+		} else {
+			lat_Radar = lat_RadarMA
+			long_Radar = long_RadarMA
 		}
 
 		//New Lat, Long Position
-		p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
-		new_p := p_radarPB.PointAtDistanceAndBearing(distancePB, bearingPB)
+		p_radar := geo.NewPoint(lat_Radar, long_Radar)
+		new_p := p_radar.PointAtDistanceAndBearing(distance, bearing)
 
 		//Vincenty
-		r := geodesic.WGS84.Direct(lat_RadarPB, long_RadarPB, bearingPB, distancePB_m)
+		r := geodesic.WGS84.Direct(lat_Radar, long_Radar, bearing, distance_m)
 		//dmsCoordinate, err := New(LatLon{Latitude: new_p.Lat(), Longitude: new_p.Lng()})
 		if err != nil {
 			log.Fatal(err)
 		}
-		table.AddRow(target.TIME, Float64ToString(s_X), Float64ToString(s_Y), fmt.Sprintf("%.2f", distancePB), fmt.Sprintf("%.2f", bearingPB), Float64ToString(bearingPB_s), Float64ToString(new_p.Lat()), Float64ToString(new_p.Lng()), Float64ToString(r.Lat2), Float64ToString(r.Lon2))
+		table.AddRow(target.TIME, Float64ToString(s_X), Float64ToString(s_Y), fmt.Sprintf("%.2f", distance), fmt.Sprintf("%.2f", bearing), Float64ToString(bearing_s), Float64ToString(new_p.Lat()), Float64ToString(new_p.Lng()), Float64ToString(r.Lat2), Float64ToString(r.Lon2))
 	}
 	fmt.Println(table.Render())
 
@@ -182,7 +197,7 @@ func main() {
 	BOF := "FileType=text/acmi/tacview\nFileVersion=2.2\n"
 	GIOF := "0,Author=Enrico Speranza\n0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136\n0,ReferenceTime=1980-06-27T18:00:00Z\n"
 	//Open with name
-	f, err := os.Create("data/nearadaractivity19800627180000ZLL464Cos4Vincety.acmi")
+	f, err := os.Create("data/nearadaractivity19800627180000ZLL464Cos4Vincetyv2.acmi")
 	if err != nil {
 		panic(err)
 	}
@@ -198,11 +213,12 @@ func main() {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
 		s_ALT, _ := strconv.ParseFloat(target.ALT, 64)
+		s_NTN := target.NTN
 		s_ALT = feet2meters(s_ALT) //Feet To Meters (ASL)
 		//distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
-		distancePB_m := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DMM
-		var bearingPB_s float64 = 0.0
-		var bearingPB float64 = 0.0
+		distance_m := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DMM
+		var bearing_s float64 = 0.0
+		var bearing float64 = 0.0
 		var sqrt float64 = 0.0
 		sqrt = (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2)))
 		//fmt.Println(Float32ToString(s_Y)) //DEBUG
@@ -214,20 +230,20 @@ func main() {
 		//WARNING: could be: 360-tan^-1(85.20/94.31)*180/3.1415 NO, doesn't works!
 		if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == false) {
 			// -X +Y
-			bearingPB_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
-			bearingPB = bearingPB_s + 270.0
+			bearing_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
+			bearing = bearing_s + 270.0
 		} else if (math.Signbit(s_X) == true) && (math.Signbit(s_Y) == true) {
 			// -X -Y
-			bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
-			bearingPB = bearingPB_s + 180.0
+			bearing_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
+			bearing = bearing_s + 180.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == true) {
 			// +X -Y
-			bearingPB_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
-			bearingPB = bearingPB_s + 90.0
+			bearing_s = ((math.Acos(math.Abs(s_X) / sqrt)) * 180 / math.Pi)
+			bearing = bearing_s + 90.0
 		} else if (math.Signbit(s_X) == false) && (math.Signbit(s_Y) == false) {
 			// +X +Y
-			bearingPB_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
-			bearingPB = bearingPB_s
+			bearing_s = ((math.Acos(math.Abs(s_Y) / sqrt)) * 180 / math.Pi)
+			bearing = bearing_s
 		}
 		//bearingPB = bearingPB - 1.0 //Correction?
 		//bearingPB := ((90.0 - (math.Atan(math.Abs(s_Y)/math.Abs(s_X)) * 180 / math.Pi)) + 180.0)
@@ -235,8 +251,18 @@ func main() {
 		//p_radarPB := geo.NewPoint(lat_RadarPB, long_RadarPB)
 		//new_p := p_radarPB.PointAtDistanceAndBearing(distancePB, bearingPB)
 
+		//Choose Radar
+		var lat_Radar, long_Radar float64
+		if argsWithoutProg[1] == "P" {
+			lat_Radar = lat_RadarPB
+			long_Radar = long_RadarPB
+		} else {
+			lat_Radar = lat_RadarMA
+			long_Radar = long_RadarMA
+		}
+
 		//Vincenty
-		r := geodesic.WGS84.Direct(lat_RadarPB, long_RadarPB, bearingPB, distancePB_m)
+		r := geodesic.WGS84.Direct(lat_Radar, long_Radar, bearing, distance_m)
 		//Time Next
 		dateTimeNow, _ := jodaTime.Parse("HHmmss", target.TIME) //Read TIME from CSV
 		if dateTimeNow.After(dateTimeST) {
@@ -247,7 +273,7 @@ func main() {
 		}
 		_, _ = f.WriteString(strTimeToWrite)
 		//Coodinates
-		strToWrite := fmt.Sprintf("1000105,T=%s|%s|%s,Name=F104,Squawk=LL464\n", Float64ToString(r.Lon2), Float64ToString(r.Lat2), Float64ToString(s_ALT))
+		strToWrite := fmt.Sprintf("%s,T=%s|%s|%s,Name=%s,Squawk=%s\n", argsWithoutProg[3], Float64ToString(r.Lon2), Float64ToString(r.Lat2), Float64ToString(s_ALT), argsWithoutProg[2], s_NTN)
 		_, _ = f.WriteString(strToWrite)
 	}
 
