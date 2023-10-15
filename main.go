@@ -120,9 +120,9 @@ func main() {
 	//Load Args
 	argsWithoutProg := os.Args[1:]
 	//<cmd> LL464.csv P|M F104 1000105
-	//<cmd> LL464.csv P|M F104 1000105
+	//<cmd> LL464.csv P|M F104 1000105 "Lable blue"
 	//LoadCSV
-	//fmt.Println("data/" + argsWithoutProg[0]) //DEBUG
+	//fmt.Println(argsWithoutProg[4]) //DEBUG
 	csvFile, err := os.OpenFile("data/"+argsWithoutProg[0], os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		panic(err)
@@ -197,7 +197,7 @@ func main() {
 	BOF := "FileType=text/acmi/tacview\nFileVersion=2.2\n"
 	GIOF := "0,Author=Enrico Speranza\n0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136\n0,ReferenceTime=1980-06-27T18:00:00Z\n"
 	//Open with name
-	f, err := os.Create("data/nearadaractivity19800627180000ZLL464Cos4Vincetyv2.acmi")
+	f, err := os.Create("data/nearadaractivity19800627180000Znew.acmi")
 	if err != nil {
 		panic(err)
 	}
@@ -273,7 +273,7 @@ func main() {
 		}
 		_, _ = f.WriteString(strTimeToWrite)
 		//Coodinates
-		strToWrite := fmt.Sprintf("%s,T=%s|%s|%s,Name=%s,Squawk=%s\n", argsWithoutProg[3], Float64ToString(r.Lon2), Float64ToString(r.Lat2), Float64ToString(s_ALT), argsWithoutProg[2], s_NTN)
+		strToWrite := fmt.Sprintf("%s,T=%s|%s|%s,Name=%s,Squawk=%s,Label=%s\n", argsWithoutProg[3], Float64ToString(r.Lon2), Float64ToString(r.Lat2), Float64ToString(s_ALT), argsWithoutProg[2], s_NTN, argsWithoutProg[4])
 		_, _ = f.WriteString(strToWrite)
 	}
 
