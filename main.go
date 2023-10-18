@@ -120,7 +120,9 @@ func main() {
 	//Load Args
 	argsWithoutProg := os.Args[1:]
 	//<cmd> LL464.csv P|M F104 1000105
-	//<cmd> LL464.csv P|M F104 1000105 "Lable blue"
+	//<cmd> LL464.csv P|M F104 1000105 "TF-104G Bergamini-Moretti"
+	//P = Poggio Ballone
+	//M = Marsala
 	//LoadCSV
 	//fmt.Println(argsWithoutProg[4]) //DEBUG
 	csvFile, err := os.OpenFile("data/"+argsWithoutProg[0], os.O_RDWR|os.O_CREATE, os.ModePerm)
