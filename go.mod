@@ -21,6 +21,7 @@ require (
 	github.com/kylelemons/go-gypsy v1.0.0 // indirect
 	github.com/lib/pq v1.10.9 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
+	github.com/putridparrot/GoUnits v0.1.0
 	github.com/pymaxion/geographiclib-go v1.0.0
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/vjeantet/jodaTime v1.0.0

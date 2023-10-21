@@ -15,6 +15,8 @@ github.com/mattn/go-runewidth v0.0.15 h1:UNAjwbU9l54TA3KzvqLGxwWjHmMgBUVhBiTjelZ
 github.com/mattn/go-runewidth v0.0.15/go.mod h1:Jdepj2loyihRzMpdS35Xk/zdY8IAYHsh153qUoGf23w=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/putridparrot/GoUnits v0.1.0 h1:pH64DBaNcx5NzhphPQGM3thZ7tb+DWf8JYbrY6SzupQ=
+github.com/putridparrot/GoUnits v0.1.0/go.mod h1:qECsunDCQ5aQtrei1FlHg1ezN3qthkAjpy+B+pLw658=
 github.com/pymaxion/geographiclib-go v1.0.0 h1:gAtQB8UFSAMXTX1S9bV8Gfmyb5xwP8q/lxdVOuGNxek=
 github.com/pymaxion/geographiclib-go v1.0.0/go.mod h1:0XekMX3F94zoVDVY+k9U1KdEkcTg2u9GSHHvUZbYG4c=
 github.com/rbsns/golang-geo v0.7.0 h1:Incc5ltOnDhTghOzI7ocM9B8rArxOlBzA9uJytZSBBY=

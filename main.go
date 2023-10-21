@@ -5,10 +5,13 @@ import (
 	"log"
 	"math"
 	"os"
+	"path"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/gocarina/gocsv"
+	"github.com/putridparrot/GoUnits/speed"
 	"github.com/pymaxion/geographiclib-go/geodesic"
 	geo "github.com/rbsns/golang-geo"
 	"github.com/scylladb/termtables"
@@ -16,7 +19,7 @@ import (
 )
 
 // Version
-const Version = "0.0.2"
+const Version = "0.0.3"
 
 // Constans
 const DM = 1.828   //https://en.wikipedia.org/wiki/Data_mile Km
@@ -108,12 +111,17 @@ func DDHHMMZ() string {
 
 func DDHHMMZmmmYY() string {
 	current_time := time.Now().UTC()
-	return fmt.Sprintf(current_time.Format("021504ZJan06\n"))
+	return fmt.Sprintf(current_time.Format("021504ZJan06"))
 }
 
 // https://ispycode.com/GO/Math/Metric-Conversions/Distance/Feet-to-meters
 func feet2meters(feet float64) float64 {
 	return feet * 0.3048
+}
+
+// https://siongui.github.io/2018/02/25/go-get-file-name-without-extension/
+func FilenameWithoutExtension(fn string) string {
+	return strings.TrimSuffix(fn, path.Ext(fn))
 }
 
 func main() {
@@ -199,7 +207,7 @@ func main() {
 	BOF := "FileType=text/acmi/tacview\nFileVersion=2.2\n"
 	GIOF := "0,Author=Enrico Speranza\n0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136\n0,ReferenceTime=1980-06-27T18:00:00Z\n"
 	//Open with name
-	f, err := os.Create("data/nearadaractivity19800627180000Znew.acmi")
+	f, err := os.Create("out/nearadaractivity19800627180000Z" + FilenameWithoutExtension(argsWithoutProg[0]) + "v" + DDHHMMZmmmYY() + ".acmi")
 	if err != nil {
 		panic(err)
 	}
@@ -216,7 +224,8 @@ func main() {
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
 		s_ALT, _ := strconv.ParseFloat(target.ALT, 64)
 		s_NTN := target.NTN
-		s_ALT = feet2meters(s_ALT) //Feet To Meters (ASL)
+		s_ALT = feet2meters(s_ALT)                                                           //Feet To Meters (ASL)
+		s_SPEED := speed.Knots.ToMetresPerSecond(speed.Knots(StringToFloat64(target.SPEED))) //IAS Indicated airspeed (m/s)
 		//distancePB := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DM
 		distance_m := (math.Sqrt(math.Pow(math.Abs(s_X), 2) + math.Pow(math.Abs(s_Y), 2))) * DMM
 		var bearing_s float64 = 0.0
@@ -275,7 +284,15 @@ func main() {
 		}
 		_, _ = f.WriteString(strTimeToWrite)
 		//Coodinates
-		strToWrite := fmt.Sprintf("%s,T=%s|%s|%s,Name=%s,Squawk=%s,Label=%s\n", argsWithoutProg[3], Float64ToString(r.Lon2), Float64ToString(r.Lat2), Float64ToString(s_ALT), argsWithoutProg[2], s_NTN, argsWithoutProg[4])
+		strToWrite := fmt.Sprintf("%s,T=%s|%s|%s,IAS=%s,Name=%s,Squawk=%s,Label=%s\n",
+			argsWithoutProg[3],
+			Float64ToString(r.Lon2),
+			Float64ToString(r.Lat2),
+			Float64ToString(s_ALT),
+			Float64ToString(s_SPEED),
+			argsWithoutProg[2],
+			s_NTN,
+			argsWithoutProg[4])
 		_, _ = f.WriteString(strToWrite)
 	}
 
