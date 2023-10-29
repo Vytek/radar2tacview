@@ -184,7 +184,7 @@ FileVersion=2.1
 #1124
 1000305,T=5.42055|6.52273|
 #1126
-1000705,T=5.74591|4.97701|,Name=UNKNOW,Squawk=LL013,Label=Either SR Exercise Traffic/British Support Command,IAS=363.71306
+1000705,T=5.74591|4.97701|,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command,IAS=363.71306
 #1133
 1000205,T=5.99623|6.98417|,IAS=223.78385
 #1153
@@ -547,7 +547,7 @@ FileVersion=2.1
 #3000
 1000305,T=||
 #3001
-1000605,T=7.93522|4.08635|,Name=UNKNOW,Squawk=LL426,Label=Either Southern Region (SR) Exercise,IAS=146.61701
+1000605,T=7.93522|4.08635|,Name=UNKNOW,Squawk=LL426,Label=Southern Region (SR) Exercise,IAS=146.61701
 #3011
 1000605,T=7.91314|4.08675|
 #3021
@@ -621,7 +621,7 @@ FileVersion=2.1
 #3912
 1000605,T=6.55463|5.15611|,IAS=165.65149
 #3930
-1000905,T=2.9522|4.33061|,Name=UNKNOW,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft,IAS=666.72154
+1000905,T=2.9522|4.33061|,Name=UNKNOW,Squawk=LL457,Label=SR Exercise Traffic/British Support Command,IAS=666.72154
 #3938
 1000905,T=2.92695|4.39581|,IAS=667.75043
 #3942
