@@ -47,6 +47,7 @@ type TargetCSV struct { // Our example struct, you can use "-" to ignore a field
 	SPEED string `csv:"SPEED"`
 	BEAR  string `csv:"BEAR"`
 	ALT   string `csv:"ALT"`
+	RADAR string `csv:"RADAR"`
 }
 
 func StringToInt(data string) int {
@@ -181,7 +182,7 @@ func main() {
 
 		//Choose Radar
 		var lat_Radar, long_Radar float64
-		if argsWithoutProg[1] == "P" {
+		if target.RADAR == "P" {
 			lat_Radar = lat_RadarPB
 			long_Radar = long_RadarPB
 		} else {
@@ -264,7 +265,7 @@ func main() {
 
 		//Choose Radar
 		var lat_Radar, long_Radar float64
-		if argsWithoutProg[1] == "P" {
+		if target.RADAR == "P" {
 			lat_Radar = lat_RadarPB
 			long_Radar = long_RadarPB
 		} else {
