@@ -1,0 +1,116 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\author{}
+\date{}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+
+\begin{longtable}[]{@{}lllllll@{}}
+\toprule
+NTN & Tipo Traccia & Tipo Velivolo & Descrizione & Militare/Civile &
+SIF3 & Radar NADGE/ATCAS \\
+\midrule
+\endhead
+LE157-AA433-LG461-AA421-AJ421 & Friendly & DC9-15 I-TIGI & ITAVIA IH870
+(Bologna-Palermo) & Civile & 1136 & Potenza Picena/Poggio
+Ballone/Licola/Marsala/Fiumicino \\
+LG461-LE157 & Friendly & Fokker 28 & ITAVIA IH779 (Bergamo-Roma) &
+Civile & 1133 & Poggio Ballone \\
+LE500 & Friendly & Sconosciuto & ATI BM300 (Trieste-Roma) & Civile &
+1132/1234 & Poggio Ballone/Potenza Picena \\
+AJ407 & Friendly & B707 I-DIRU (Pezzopane) & Alitalia AZ865
+(Tunisi-Fiumicino) & Civile & 0225 & Marsala/Licola \\
+AJ417 & Friendly & Sconosciuto & Air Malta KM102 (Malta-Londra) & Civile
+& 2000 & Marsala \\
+AJ453 & Friendly & Sconosciuto & Bea Tours KT881 (Malta-Londra) & Civile
+& 0226 & Marsala \\
+LG477-AJ061-AG262 & Friendly & Sconosciuto & Air Malta KM153
+(Londra-Malta) & Civile & 1235 & Marsala/Fiumicino/Licola (AG266) \\
+AA417-LK017-LE011-AA464-LL464-LG403 & Friendly & TF-104G & Volo
+addestramento Bergamini/Moretti & Militare & & Poggio Ballone \\
+AJ024 & Friendly & Sconosciuto & British Support Command aircraft &
+Militare & & Poggio Ballone/Marsala \\
+AJ420 & Friendly & Sconosciuto & Aicraft beloging to AFSOUTH (Antisom) &
+Militare & & Marsala \\
+AM210 & Friendly & Sconosciuto & Aircraft under command and control of a
+naval task force or group & Militare & & Marsala \\
+LL457-LL013-GA421-LG456 & Friendly & Sconosciuto & SR Exercise
+Traffic/British Support Command aircraft & Militare & & Poggio
+Ballone \\
+LL426 & Pending & Sconosciuto & Either Southern Region (SR) Exercise/
+British Support Command aircraft & Militare & & Poggio Ballone \\
+AA063-LL063 & Friendly & Sconosciuto & Aircraft beloging to Allied
+Forces Southern Europe (AFSOUTH) & Militare & & Poggio Ballone \\
+LL013 & Friendly & Sconosciuto & Either SR Exercise Traffic/British
+Support Command & Militare & & Poggio Ballone \\
+LE200-LG113 & Friendly & Sconosciuto & British Strike Command aircraft &
+Militare & & Poggio Ballone \\
+LE207-LG521-LE206 & Friendly & P166 (?) & British Strike Command
+aircraft & Militare & & Poggio Ballone \\
+LG460-LG054-LG074 & Friendly & Sconosciuto & Unknow/General Aviation (?)
+& Militare & & Poggio Ballone \\
+LG475 & Frinedly & Sconosciuto & British Support Command aircraft &
+Militare & & Mortata/Poggio Ballone \\
+AA423-LL423 & Pending & Sconosciuto & British Strike Command aircraft &
+Militare & & Poggio Ballone \\
+\bottomrule
+\end{longtable}
+
+\end{document}
