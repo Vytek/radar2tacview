@@ -35,6 +35,18 @@ const long_RadarPB = 10.880370
 const lat_RadarMA = 37.827630 //Marsala
 const long_RadarMA = 12.537120
 
+/*
+43.36719444
+13.67494444
+
+43.366521, 13.673615
+Potenza Picena,62018 MC
+
+9M8F+VXG Potenza Picena, Provincia di Macerata
+*/
+const lat_RadarPP = 43.36719444
+const long_RadarPP = 13.67494444
+
 // Start time
 const ST = "180000"
 
@@ -132,6 +144,7 @@ func main() {
 	//<cmd> LL464.csv P|M F104 1000105 "TF-104G Bergamini-Moretti"
 	//P = Poggio Ballone
 	//M = Marsala
+	//PP = Potenza Picena
 	//LoadCSV
 	//fmt.Println(argsWithoutProg[4]) //DEBUG
 	csvFile, err := os.OpenFile("data/"+argsWithoutProg[0], os.O_RDWR|os.O_CREATE, os.ModePerm)
@@ -180,14 +193,19 @@ func main() {
 			bearing = bearing_s
 		}
 
-		//Choose Radar
+		///Choose Radar
 		var lat_Radar, long_Radar float64
 		if target.RADAR == "P" {
 			lat_Radar = lat_RadarPB
 			long_Radar = long_RadarPB
-		} else {
+		}
+		if target.RADAR == "M" {
 			lat_Radar = lat_RadarMA
 			long_Radar = long_RadarMA
+		}
+		if target.RADAR == "PP" {
+			lat_Radar = lat_RadarPP
+			long_Radar = long_RadarPP
 		}
 
 		//New Lat, Long Position
@@ -268,9 +286,14 @@ func main() {
 		if target.RADAR == "P" {
 			lat_Radar = lat_RadarPB
 			long_Radar = long_RadarPB
-		} else {
+		}
+		if target.RADAR == "M" {
 			lat_Radar = lat_RadarMA
 			long_Radar = long_RadarMA
+		}
+		if target.RADAR == "PP" {
+			lat_Radar = lat_RadarPP
+			long_Radar = long_RadarPP
 		}
 
 		//Vincenty
