@@ -42,10 +42,10 @@ const long_RadarMA = 12.537120
 43.366521, 13.673615
 Potenza Picena,62018 MC
 
-9M8F+VXG Potenza Picena, Provincia di Macerata
+9M8F+JC5 Potenza Picena, Provincia di Macerata
 */
-const lat_RadarPP = 43.36719444
-const long_RadarPP = 13.67494444
+const lat_RadarPP = 43.366521
+const long_RadarPP = 13.673615
 
 // Start time
 const ST = "180000"
