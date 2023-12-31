@@ -50,6 +50,9 @@ const long_RadarPP = 13.673615
 // Start time
 const ST = "180000"
 
+// String
+var strToPrint = ""
+
 type TargetCSV struct { // Our example struct, you can use "-" to ignore a field
 	TIME  string `csv:"TIME"`
 	NTN   string `csv:"NTN"`
@@ -212,6 +215,9 @@ func main() {
 		p_radar := geo.NewPoint(lat_Radar, long_Radar)
 		new_p := p_radar.PointAtDistanceAndBearing(distance, bearing)
 
+		//StringToPrint
+		strToPrint = strToPrint + "|" + Float64ToString(new_p.Lat()) + "," + Float64ToString(new_p.Lng())
+
 		//Vincenty
 		r := geodesic.WGS84.Direct(lat_Radar, long_Radar, bearing, distance_m)
 		//dmsCoordinate, err := New(LatLon{Latitude: new_p.Lat(), Longitude: new_p.Lng()})
@@ -221,6 +227,8 @@ func main() {
 		table.AddRow(target.TIME, Float64ToString(s_X), Float64ToString(s_Y), fmt.Sprintf("%.2f", distance), fmt.Sprintf("%.2f", bearing), Float64ToString(bearing_s), Float64ToString(new_p.Lat()), Float64ToString(new_p.Lng()), Float64ToString(r.Lat2), Float64ToString(r.Lon2))
 	}
 	fmt.Println(table.Render())
+
+	fmt.Println(strToPrint)
 
 	//Create and save acmi file (TacView)
 	BOF := "FileType=text/acmi/tacview\nFileVersion=2.2\n"
