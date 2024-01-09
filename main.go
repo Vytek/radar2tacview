@@ -48,7 +48,7 @@ const lat_RadarPP = 43.366521
 const long_RadarPP = 13.673615
 
 // Start time
-const ST = "180000"
+const ST = "173000"
 
 // String
 var strToPrint = ""
@@ -215,11 +215,12 @@ func main() {
 		p_radar := geo.NewPoint(lat_Radar, long_Radar)
 		new_p := p_radar.PointAtDistanceAndBearing(distance, bearing)
 
-		//StringToPrint
-		strToPrint = strToPrint + "|" + Float64ToString(new_p.Lat()) + "," + Float64ToString(new_p.Lng())
-
 		//Vincenty
 		r := geodesic.WGS84.Direct(lat_Radar, long_Radar, bearing, distance_m)
+
+		//StringToPrint
+		strToPrint = strToPrint + "|" + Float64ToString(r.Lat2) + "," + Float64ToString(r.Lon2)
+
 		//dmsCoordinate, err := New(LatLon{Latitude: new_p.Lat(), Longitude: new_p.Lng()})
 		if err != nil {
 			log.Fatal(err)
