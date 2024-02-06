@@ -163,7 +163,7 @@ func main() {
 	}
 
 	table := termtables.CreateTable()
-	table.AddHeaders("TIME", "X", "Y", "Distance from Radar", "Bearing to Radar", "Bearing", "Lat", "Long", "Lat V", "Long V")
+	table.AddHeaders("TIME", "X", "Y", "Distance from Radar", "Bearing from Radar", "Bearing", "Lat", "Long", "Lat V", "Long V")
 	//Load targets from file and add to list //DEBUG
 	for _, target := range targets {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
