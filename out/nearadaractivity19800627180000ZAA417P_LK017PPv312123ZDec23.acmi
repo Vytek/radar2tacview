@@ -1,8 +1,0 @@
-FileType=text/acmi/tacview
-FileVersion=2.2
-0,Author=Enrico Speranza
-0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136
-0,ReferenceTime=1980-06-27T18:00:00Z
-1001505,T=11.20620|44.42673|0.00000,IAS=271.49868,Name=F104,Squawk=AA417,Label=F104
-#31557600.00
-1001505,T=NaN|NaN|0.00000,IAS=0.00000,Name=F104,Squawk=,Label=F104
