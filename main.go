@@ -48,7 +48,7 @@ const lat_RadarPP = 43.366521
 const long_RadarPP = 13.673615
 
 // Start time
-const ST = "173000"
+const ST = "180000"
 
 // String
 var strToPrint = ""
