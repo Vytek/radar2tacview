@@ -1,0 +1,21 @@
+FileType=text/acmi/tacview
+FileVersion=2.2
+0,Author=Enrico Speranza
+0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136
+0,ReferenceTime=1980-06-27T18:00:00Z
+#1126.00
+1000705,T=10.74591|42.97701|0.00000,IAS=363.71306,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command
+#1153.00
+1000705,T=10.74605|42.91119|0.00000,IAS=363.19862,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command
+#1176.00
+1000705,T=10.67906|42.86173|0.00000,IAS=363.19862,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command
+#1199.00
+1000705,T=10.70147|42.84531|0.00000,IAS=362.16973,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command
+#1211.00
+1000705,T=10.67922|42.81237|0.00000,IAS=362.16973,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command
+#1246.00
+1000705,T=10.61259|42.71350|0.00000,IAS=362.16973,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command
+#1269.00
+1000705,T=10.54600|42.64750|0.00000,IAS=362.16973,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command
+#1281.00
+1000705,T=10.52390|42.61452|0.00000,IAS=362.16973,Name=UNKNOW,Squawk=LL013,Label=SR Exercise Traffic/British Support Command
