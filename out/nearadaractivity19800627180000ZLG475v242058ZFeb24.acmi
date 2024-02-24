@@ -1,0 +1,15 @@
+FileType=text/acmi/tacview
+FileVersion=2.2
+0,Author=Enrico Speranza
+0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136
+0,ReferenceTime=1980-06-27T18:00:00Z
+#1028.00
+1000805,T=8.03611|44.85095|0.00000,IAS=126.55363,Name=UNKNOWN,Squawk=,Label=5 ATAF AD on exercise
+#1038.00
+1000805,T=8.03531|44.86738|0.00000,IAS=126.55363,Name=UNKNOWN,Squawk=,Label=5 ATAF AD on exercise
+#1059.00
+1000805,T=8.03451|44.88382|0.00000,IAS=126.55363,Name=UNKNOWN,Squawk=,Label=5 ATAF AD on exercise
+#1109.00
+1000805,T=8.07759|44.95068|0.00000,IAS=120.89472,Name=UNKNOWN,Squawk=,Label=5 ATAF AD on exercise
+#1119.00
+1000805,T=8.07759|44.95068|0.00000,IAS=120.89472,Name=UNKNOWN,Squawk=,Label=5 ATAF AD on exercise

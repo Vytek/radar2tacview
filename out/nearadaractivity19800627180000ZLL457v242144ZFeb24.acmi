@@ -1,0 +1,151 @@
+FileType=text/acmi/tacview
+FileVersion=2.2
+0,Author=Enrico Speranza
+0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136
+0,ReferenceTime=1980-06-27T18:00:00Z
+#3930.00
+1000905,T=7.95220|42.33061|0.00000,IAS=666.72154,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3938.00
+1000905,T=7.92695|42.39581|0.00000,IAS=666.72154,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3938.00
+1000905,T=7.92695|42.39581|0.00000,IAS=667.75043,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3942.00
+1000905,T=7.92695|42.39581|0.00000,IAS=666.72154,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3942.00
+1000905,T=7.92695|42.39581|0.00000,IAS=666.72154,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3954.00
+1000905,T=7.95144|42.34705|0.00000,IAS=301.97959,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3954.00
+1000905,T=7.95144|42.34705|0.00000,IAS=301.97959,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3967.00
+1000905,T=7.90476|42.39523|0.00000,IAS=264.93950,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3967.00
+1000905,T=7.90476|42.39523|0.00000,IAS=264.93950,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3990.00
+1000905,T=7.90398|42.41167|0.00000,IAS=183.65709,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3990.00
+1000905,T=7.90398|42.41167|0.00000,IAS=183.65709,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4013.00
+1000905,T=7.88021|42.44397|0.00000,IAS=181.59931,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4013.00
+1000905,T=7.88021|42.44397|0.00000,IAS=181.59931,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4037.00
+1000905,T=7.85642|42.47627|0.00000,IAS=185.20043,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4037.00
+1000905,T=7.85642|42.47627|0.00000,IAS=185.20043,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4049.00
+1000905,T=7.83341|42.49212|0.00000,IAS=185.71487,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4049.00
+1000905,T=7.83341|42.49212|0.00000,IAS=180.57042,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4108.00
+1000905,T=7.78408|42.58957|0.00000,IAS=187.25821,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4120.00
+1000905,T=7.78327|42.60601|0.00000,IAS=185.71487,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4132.00
+1000905,T=7.76018|42.62184|0.00000,IAS=186.22932,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4144.00
+1000905,T=7.75936|42.63828|0.00000,IAS=184.17154,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4167.00
+1000905,T=7.73460|42.68699|0.00000,IAS=185.20043,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4179.00
+1000905,T=7.73377|42.70343|0.00000,IAS=182.62820,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4203.00
+1000905,T=7.70980|42.73569|0.00000,IAS=181.59931,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4227.00
+1000905,T=7.68411|42.80083|0.00000,IAS=180.57042,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4262.00
+1000905,T=7.63945|42.79957|0.00000,IAS=183.65709,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4274.00
+1000905,T=7.63859|42.81601|0.00000,IAS=184.68598,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4275.00
+1000905,T=7.66092|42.81664|0.00000,IAS=242.30389,Name=UNKNOWN,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4282.00
+1000905,T=7.66007|42.83308|0.00000,IAS=242.30389,Name=UNKNOWN,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4286.00
+1000905,T=7.66007|42.83308|0.00000,IAS=242.30389,Name=UNKNOWN,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4298.00
+1000905,T=7.63601|42.86533|0.00000,IAS=243.33278,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4321.00
+1000905,T=7.58956|42.89693|0.00000,IAS=241.27500,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4345.00
+1000905,T=7.56543|42.92916|0.00000,IAS=230.47164,Name=UNKNOWN,Squawk=LG457,Label=SR Exercise Traffic/British Support Command aircraft
+#4369.00
+1000905,T=7.54128|42.96138|0.00000,IAS=210.40826,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4392.00
+1000905,T=7.51620|43.01004|0.00000,IAS=206.29270,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4404.00
+1000905,T=7.51531|43.02647|0.00000,IAS=202.17713,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4440.00
+1000905,T=7.49109|43.05868|0.00000,IAS=183.65709,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4452.00
+1000905,T=7.46776|43.07446|0.00000,IAS=181.08486,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4475.00
+1000905,T=7.46593|43.10733|0.00000,IAS=166.16594,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4487.00
+1000905,T=7.44258|43.12309|0.00000,IAS=174.91152,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4499.00
+1000905,T=7.44166|43.13953|0.00000,IAS=173.36818,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4523.00
+1000905,T=7.41643|43.18816|0.00000,IAS=179.02708,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4535.00
+1000905,T=7.41550|43.20459|0.00000,IAS=182.62820,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4546.00
+1000905,T=7.39209|43.22035|0.00000,IAS=181.59931,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4582.00
+1000905,T=7.38928|43.26965|0.00000,IAS=184.17154,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4618.00
+1000905,T=7.36300|43.33470|0.00000,IAS=187.25821,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4677.00
+1000905,T=7.31220|43.43191|0.00000,IAS=129.64030,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4689.00
+1000905,T=7.31123|43.44834|0.00000,IAS=138.38588,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4701.00
+1000905,T=7.28867|43.44764|0.00000,IAS=129.12585,Name=UNKNOWN,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4777.00
+1000905,T=7.25926|43.56196|6400.80000,IAS=171.31040,Name=UNKNOWN,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4787.00
+1000905,T=7.23666|43.56125|6400.80000,IAS=171.31040,Name=UNKNOWN,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4831.00
+1000905,T=7.16281|43.65767|6400.80000,IAS=164.10816,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4843.00
+1000905,T=7.14017|43.65694|6400.80000,IAS=161.02148,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4902.00
+1000905,T=7.06708|43.73686|6400.80000,IAS=163.59371,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4914.00
+1000905,T=7.04337|43.75254|6400.80000,IAS=163.59371,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4926.00
+1000905,T=7.04233|43.76897|6400.80000,IAS=164.10816,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4938.00
+1000905,T=7.01860|43.78464|6400.80000,IAS=161.53593,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4997.00
+1000905,T=6.94626|43.84806|6400.80000,IAS=169.25261,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5044.00
+1000905,T=6.87376|43.91142|6400.80000,IAS=175.94041,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5092.00
+1000905,T=6.82386|43.97554|6400.80000,IAS=175.42596,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5103.00
+1000905,T=6.79999|43.99117|6400.80000,IAS=177.99819,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5127.00
+1000905,T=6.77385|44.03964|6400.80000,IAS=182.62820,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5175.00
+1000905,T=6.72602|44.07086|6400.80000,IAS=184.68598,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5186.00
+1000905,T=6.72259|44.12013|6400.80000,IAS=184.17154,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5210.00
+1000905,T=6.69633|44.16858|6400.80000,IAS=184.17154,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5222.00
+1000905,T=6.69517|44.18500|6400.80000,IAS=184.17154,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5234.00
+1000905,T=6.69402|44.20143|6400.80000,IAS=182.62820,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5246.00
+1000905,T=6.69286|44.21785|6400.80000,IAS=182.11375,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5257.00
+1000905,T=6.66769|44.24987|6400.80000,IAS=181.08486,Name=UNKNOWN,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5281.00
+1000905,T=6.64250|44.28188|6400.80000,IAS=181.59931,Name=UNKNOWN,Squawk=LG465,Label=SR Exercise Traffic/British Support Command aircraft
+#5293.00
+1000905,T=6.64132|44.29830|6400.80000,IAS=176.96930,Name=UNKNOWN,Squawk=LG456,Label=SR Exercise Traffic/British Support Command aircraft
+#5305.00
+1000905,T=6.61727|44.31388|6400.80000,IAS=178.51263,Name=UNKNOWN,Squawk=LG456,Label=SR Exercise Traffic/British Support Command aircraft
+#5317.00
+1000905,T=6.59320|44.32946|6400.80000,IAS=178.51263,Name=UNKNOWN,Squawk=LG456,Label=SR Exercise Traffic/British Support Command aircraft
