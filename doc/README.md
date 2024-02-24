@@ -18,6 +18,6 @@
 | LE200-LG113                         | Friendly     | Sconosciuto             | British Strike Command aircraft                              | Militare        |           | Poggio Ballone                                         |
 | LE207-LG521-LE206                   | Friendly     | P166 (?)                | British Strike Command aircraft                              | Militare        |           | Poggio Ballone                                         |
 | LG460-LG054-LG074                   | Friendly     | Sconosciuto             | Unknow/General Aviation (?)                                  | Militare        |           | Poggio Ballone                                         |
-| LG475                               | Frinedly     | Sconosciuto             | British Support Command aircraft                             | Militare        |           | Mortata/Poggio Ballone                                 |
+| LG475                               | Frinedly     | Sconosciuto             | British Support Command aircraft                             | Militare        |           | Mortara/Poggio Ballone                                 |
 | AA423-LL423                         | Pending      | Sconosciuto             | British Strike Command aircraft                              | Militare        |           | Poggio Ballone                                         |
 
