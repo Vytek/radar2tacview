@@ -1,0 +1,15 @@
+FileType=text/acmi/tacview
+FileVersion=2.2
+0,Author=Enrico Speranza
+0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136
+0,ReferenceTime=1980-06-27T18:00:00Z
+#1028.00
+1014100,T=8.03611|44.85095|0.00000,IAS=126.55363,Name=LG475,Squawk=,Label=British Support Command
+#1038.00
+1014100,T=8.03569|44.85956|0.00000,IAS=126.55363,Name=LG475,Squawk=,Label=British Support Command
+#1059.00
+1014100,T=8.03523|44.86888|0.00000,IAS=126.55363,Name=LG475,Squawk=,Label=British Support Command
+#1109.00
+1014100,T=8.04905|44.89556|0.00000,IAS=120.89472,Name=LG475,Squawk=,Label=British Support Command
+#1119.00
+1014100,T=8.05758|44.91203|0.00000,IAS=120.89472,Name=LG475,Squawk=,Label=British Support Command

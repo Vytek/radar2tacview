@@ -1,0 +1,31 @@
+FileType=text/acmi/tacview
+FileVersion=2.2
+0,Author=Enrico Speranza
+0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136
+0,ReferenceTime=1980-06-27T18:00:00Z
+#1189.00
+1010100,T=10.83559|42.92772|0.00000,IAS=543.25459,Name=LL063,Squawk=AA063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#1216.00
+1010100,T=10.94117|42.93629|0.00000,IAS=543.76903,Name=LL063,Squawk=AA063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#1226.00
+1010100,T=11.00381|42.92659|0.00000,IAS=543.76903,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#1264.00
+1010100,T=11.10944|42.89984|0.00000,IAS=543.76903,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#1276.00
+1010100,T=11.20137|42.88321|0.00000,IAS=543.76903,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#2851.00
+1010100,T=11.14804|42.84427|0.00000,IAS=224.29830,Name=LL063,Squawk=AA063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#2863.00
+1010100,T=11.10464|42.80798|0.00000,IAS=224.29830,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#2875.00
+1010100,T=11.07372|42.78213|0.00000,IAS=224.29830,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#2887.00
+1010100,T=11.04538|42.77248|0.00000,IAS=224.81274,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#2935.00
+1010100,T=11.01876|42.74316|0.00000,IAS=225.32719,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#2947.00
+1010100,T=10.99336|42.71739|0.00000,IAS=225.32719,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#2959.00
+1010100,T=10.96882|42.69416|0.00000,IAS=225.32719,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)
+#2971.00
+1010100,T=10.94491|42.66833|0.00000,IAS=225.32719,Name=LL063,Squawk=LL063,Label=Aircraft beloging to Allied Forces Southern Europe (AFSOUTH)

@@ -1,0 +1,153 @@
+FileType=text/acmi/tacview
+FileVersion=2.2
+0,Author=Enrico Speranza
+0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136
+0,ReferenceTime=1980-06-27T18:00:00Z
+#3930.00
+1002100,T=7.95220|42.33061|0.00000,IAS=666.72154,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3930.00
+1002100,T=7.95220|42.33061|0.00000,IAS=666.72154,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3938.00
+1002100,T=7.94250|42.35565|0.00000,IAS=666.72154,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3938.00
+1002100,T=7.93743|42.36875|0.00000,IAS=667.75043,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3942.00
+1002100,T=7.93430|42.37684|0.00000,IAS=666.72154,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3942.00
+1002100,T=7.93220|42.38224|0.00000,IAS=666.72154,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3954.00
+1002100,T=7.93755|42.37246|0.00000,IAS=301.97959,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3954.00
+1002100,T=7.94136|42.36549|0.00000,IAS=301.97959,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3967.00
+1002100,T=7.93139|42.37359|0.00000,IAS=264.93950,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3967.00
+1002100,T=7.92416|42.37946|0.00000,IAS=264.93950,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3990.00
+1002100,T=7.91870|42.38818|0.00000,IAS=183.65709,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#3990.00
+1002100,T=7.91472|42.39454|0.00000,IAS=183.65709,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4013.00
+1002100,T=7.90539|42.40790|0.00000,IAS=181.59931,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4013.00
+1002100,T=7.89859|42.41765|0.00000,IAS=181.59931,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4037.00
+1002100,T=7.88719|42.43349|0.00000,IAS=185.20043,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4037.00
+1002100,T=7.87888|42.44505|0.00000,IAS=185.20043,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4049.00
+1002100,T=7.86659|42.45776|0.00000,IAS=185.71487,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4049.00
+1002100,T=7.84974|42.62694|0.00000,IAS=180.57042,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4108.00
+1002100,T=7.83200|42.61685|0.00000,IAS=187.25821,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4120.00
+1002100,T=7.81884|42.61392|0.00000,IAS=185.71487,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4132.00
+1002100,T=7.80299|42.61606|0.00000,IAS=186.22932,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4144.00
+1002100,T=7.79120|42.62206|0.00000,IAS=184.17154,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4167.00
+1002100,T=7.77591|42.63960|0.00000,IAS=185.20043,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4179.00
+1002100,T=7.76453|42.65685|0.00000,IAS=182.62820,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4203.00
+1002100,T=7.74974|42.67815|0.00000,IAS=181.59931,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4227.00
+1002100,T=7.73201|42.71129|0.00000,IAS=180.57042,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4262.00
+1002100,T=7.70700|42.73514|0.00000,IAS=183.65709,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4274.00
+1002100,T=7.68852|42.75699|0.00000,IAS=184.68598,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4275.00
+1002100,T=7.68106|42.77310|0.00000,IAS=242.30389,Name=LL457,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4282.00
+1002100,T=7.67539|42.78931|0.00000,IAS=242.30389,Name=LL457,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4286.00
+1002100,T=7.67125|42.80113|0.00000,IAS=242.30389,Name=LL457,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4298.00
+1002100,T=7.66173|42.81848|0.00000,IAS=243.33278,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4321.00
+1002100,T=7.64223|42.83967|0.00000,IAS=241.27500,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4345.00
+1002100,T=7.62148|42.86384|0.00000,IAS=230.47164,Name=LL457,Squawk=LG457,Label=SR Exercise Traffic/British Support Command aircraft
+#4369.00
+1002100,T=7.59982|42.89019|0.00000,IAS=210.40826,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4392.00
+1002100,T=7.57723|42.92257|0.00000,IAS=206.29270,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4404.00
+1002100,T=7.56050|42.95064|0.00000,IAS=202.17713,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4440.00
+1002100,T=7.54175|42.97983|0.00000,IAS=183.65709,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4452.00
+1002100,T=7.52176|43.00539|0.00000,IAS=181.08486,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4475.00
+1002100,T=7.50668|43.03293|0.00000,IAS=166.16594,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4487.00
+1002100,T=7.48936|43.05729|0.00000,IAS=174.91152,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4499.00
+1002100,T=7.47647|43.07951|0.00000,IAS=173.36818,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4523.00
+1002100,T=7.46025|43.10886|0.00000,IAS=179.02708,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4535.00
+1002100,T=7.44816|43.13472|0.00000,IAS=182.62820,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4546.00
+1002100,T=7.43301|43.15785|0.00000,IAS=181.59931,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4582.00
+1002100,T=7.42120|43.18806|0.00000,IAS=184.17154,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4618.00
+1002100,T=7.40548|43.22767|0.00000,IAS=187.25821,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4677.00
+1002100,T=7.38028|43.28285|0.00000,IAS=129.64030,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4689.00
+1002100,T=7.36162|43.32756|0.00000,IAS=138.38588,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4701.00
+1002100,T=7.34192|43.36000|0.00000,IAS=129.12585,Name=LL457,Squawk=LL457,Label=SR Exercise Traffic/British Support Command aircraft
+#4777.00
+1002100,T=7.31959|43.41456|6400.80000,IAS=171.31040,Name=LL457,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4787.00
+1002100,T=7.29718|43.45419|6400.80000,IAS=171.31040,Name=LL457,Squawk=LL013,Label=SR Exercise Traffic/British Support Command aircraft
+#4831.00
+1002100,T=7.26088|43.50916|6400.80000,IAS=164.10816,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4843.00
+1002100,T=7.22827|43.54908|6400.80000,IAS=161.02148,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4902.00
+1002100,T=7.18473|43.59981|6400.80000,IAS=163.59371,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4914.00
+1002100,T=7.14654|43.64107|6400.80000,IAS=163.59371,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4926.00
+1002100,T=7.11838|43.67563|6400.80000,IAS=164.10816,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4938.00
+1002100,T=7.09143|43.70508|6400.80000,IAS=161.53593,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#4997.00
+1002100,T=7.05221|43.74371|6400.80000,IAS=169.25261,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5044.00
+1002100,T=7.00400|43.78902|6400.80000,IAS=175.94041,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5092.00
+1002100,T=6.95533|43.83941|6400.80000,IAS=175.42596,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5103.00
+1002100,T=6.91337|43.88041|6400.80000,IAS=177.99819,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5127.00
+1002100,T=6.87568|43.92342|6400.80000,IAS=182.62820,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5175.00
+1002100,T=6.83524|43.96325|6400.80000,IAS=184.68598,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5186.00
+1002100,T=6.80481|44.00564|6400.80000,IAS=184.17154,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5210.00
+1002100,T=6.77550|44.04966|6400.80000,IAS=184.17154,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5222.00
+1002100,T=6.75380|44.08622|6400.80000,IAS=184.17154,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5234.00
+1002100,T=6.73765|44.11734|6400.80000,IAS=182.62820,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5246.00
+1002100,T=6.72555|44.14450|6400.80000,IAS=182.11375,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5257.00
+1002100,T=6.70992|44.17296|6400.80000,IAS=181.08486,Name=LL457,Squawk=GA421,Label=SR Exercise Traffic/British Support Command aircraft
+#5281.00
+1002100,T=6.69170|44.20239|6400.80000,IAS=181.59931,Name=LL457,Squawk=LG465,Label=SR Exercise Traffic/British Support Command aircraft
+#5293.00
+1002100,T=6.67809|44.22830|6400.80000,IAS=176.96930,Name=LL457,Squawk=LG456,Label=SR Exercise Traffic/British Support Command aircraft
+#5305.00
+1002100,T=6.66166|44.25142|6400.80000,IAS=178.51263,Name=LL457,Squawk=LG456,Label=SR Exercise Traffic/British Support Command aircraft
+#5317.00
+1002100,T=6.64317|44.27250|6400.80000,IAS=178.51263,Name=LL457,Squawk=LG456,Label=SR Exercise Traffic/British Support Command aircraft

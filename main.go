@@ -124,6 +124,35 @@ func FilenameWithoutExtension(fn string) string {
 	return strings.TrimSuffix(fn, path.Ext(fn))
 }
 
+// Kalman1D è un filtro di Kalman molto semplice per una variabile
+type Kalman1D struct {
+	X float64 // stato stimato
+	P float64 // incertezza
+	Q float64 // rumore di processo
+	R float64 // rumore di misura
+}
+
+func NewKalman1D(q, r, initialValue float64) *Kalman1D {
+	return &Kalman1D{
+		X: initialValue,
+		P: 1,
+		Q: q,
+		R: r,
+	}
+}
+
+func (k *Kalman1D) Update(measurement float64) float64 {
+	// Predict
+	k.P += k.Q
+
+	// Update
+	K := k.P / (k.P + k.R)
+	k.X = k.X + K*(measurement-k.X)
+	k.P = (1 - K) * k.P
+
+	return k.X
+}
+
 func main() {
 	//Load Args
 	argsWithoutProg := os.Args[1:]
@@ -144,6 +173,10 @@ func main() {
 	if err := gocsv.UnmarshalFile(csvFile, &targets); err != nil { // Load targets from file
 		panic(err)
 	}
+
+	// Inizializza i filtri di Kalman per latitudine e longitudine
+	var kalmanLat, kalmanLong *Kalman1D
+	kalmanInitialized := false
 
 	table := termtables.CreateTable()
 	table.AddHeaders("TIME", "X", "Y", "Distance from Radar", "Bearing to Radar", "Bearing", "Lat", "Long", "Lat V", "Long V")
@@ -195,11 +228,33 @@ func main() {
 
 		//Vincenty
 		r := geodesic.WGS84.Direct(lat_Radar, long_Radar, bearing, distance_m)
-		//dmsCoordinate, err := New(LatLon{Latitude: new_p.Lat(), Longitude: new_p.Lng()})
 		if err != nil {
 			log.Fatal(err)
 		}
-		table.AddRow(target.TIME, Float64ToString(s_X), Float64ToString(s_Y), fmt.Sprintf("%.2f", distance), fmt.Sprintf("%.2f", bearing), Float64ToString(bearing_s), Float64ToString(new_p.Lat()), Float64ToString(new_p.Lng()), Float64ToString(r.Lat2), Float64ToString(r.Lon2))
+
+		// Inizializza i filtri Kalman con il primo valore
+		if !kalmanInitialized {
+			kalmanLat = NewKalman1D(0.00001, 0.0001, r.Lat2)
+			kalmanLong = NewKalman1D(0.00001, 0.0001, r.Lon2)
+			kalmanInitialized = true
+		}
+
+		// Applica il filtro di Kalman
+		filteredLat := kalmanLat.Update(r.Lat2)
+		filteredLong := kalmanLong.Update(r.Lon2)
+
+		table.AddRow(
+			target.TIME,
+			Float64ToString(s_X),
+			Float64ToString(s_Y),
+			fmt.Sprintf("%.2f", distance),
+			fmt.Sprintf("%.2f", bearing),
+			Float64ToString(bearing_s),
+			Float64ToString(new_p.Lat()),
+			Float64ToString(new_p.Lng()),
+			Float64ToString(filteredLat),
+			Float64ToString(filteredLong),
+		)
 	}
 	fmt.Println(table.Render())
 
@@ -219,6 +274,10 @@ func main() {
 	//fmt.Println(dateTimeST) //DEBUG
 	var strTimeToWrite string
 	var sumDuration int32
+	// Prima del ciclo targets, aggiungi:
+	var kalmanLat2, kalmanLong2 *Kalman1D
+	kalmanInitialized2 := false
+
 	for _, target := range targets {
 		s_X, _ := strconv.ParseFloat(target.X, 64)
 		s_Y, _ := strconv.ParseFloat(target.Y, 64)
@@ -274,6 +333,18 @@ func main() {
 
 		//Vincenty
 		r := geodesic.WGS84.Direct(lat_Radar, long_Radar, bearing, distance_m)
+
+		// Inizializza i filtri Kalman con il primo valore
+		if !kalmanInitialized2 {
+			kalmanLat2 = NewKalman1D(0.00001, 0.0001, r.Lat2)
+			kalmanLong2 = NewKalman1D(0.00001, 0.0001, r.Lon2)
+			kalmanInitialized2 = true
+		}
+
+		// Applica il filtro di Kalman
+		filteredLat := kalmanLat2.Update(r.Lat2)
+		filteredLong := kalmanLong2.Update(r.Lon2)
+
 		//Time Next
 		dateTimeNow, _ := jodaTime.Parse("HHmmss", target.TIME) //Read TIME from CSV
 		if dateTimeNow.After(dateTimeST) {
@@ -286,8 +357,8 @@ func main() {
 		//Coodinates
 		strToWrite := fmt.Sprintf("%s,T=%s|%s|%s,IAS=%s,Name=%s,Squawk=%s,Label=%s\n",
 			argsWithoutProg[3],
-			Float64ToString(r.Lon2),
-			Float64ToString(r.Lat2),
+			Float64ToString(filteredLong), // usa coordinate filtrate
+			Float64ToString(filteredLat),
 			Float64ToString(s_ALT),
 			Float64ToString(s_SPEED),
 			argsWithoutProg[2],

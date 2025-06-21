@@ -1,0 +1,171 @@
+FileType=text/acmi/tacview
+FileVersion=2.2
+0,Author=Enrico Speranza
+0,Title=Radar activity near ITAVIA I-TIGI IH870 A1136
+0,ReferenceTime=1980-06-27T18:00:00Z
+#9429.00
+1006105,T=14.37594|37.77757|0.00000,IAS=0.00000,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#9434.00
+1006105,T=14.37594|37.77757|0.00000,IAS=0.00000,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#9446.00
+1006105,T=14.37594|37.77757|0.00000,IAS=205.00658,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#9465.00
+1006105,T=14.35203|37.73043|7629.44880,IAS=205.00658,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#9467.00
+1006105,T=14.33712|37.70138|7629.44880,IAS=205.00658,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#9522.00
+1006105,T=14.31254|37.69462|7629.44880,IAS=143.21138,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#9621.00
+1006105,T=14.26954|37.69582|4000.50000,IAS=105.10639,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#9703.00
+1006105,T=14.21737|37.70508|4628.99760,IAS=101.92711,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#9726.00
+1006105,T=14.17341|37.71417|4628.99760,IAS=101.92711,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10041.00
+1006105,T=14.03757|37.75679|4971.89760,IAS=129.25447,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10088.00
+1006105,T=13.92026|37.79090|4971.89760,IAS=130.25249,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10216.00
+1006105,T=13.78989|37.82665|4971.89760,IAS=123.20973,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10321.00
+1006105,T=13.66424|37.86583|5029.20000,IAS=110.80130,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10333.00
+1006105,T=13.56913|37.89590|5029.20000,IAS=110.80130,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10345.00
+1006105,T=13.49637|37.91908|5029.20000,IAS=109.99362,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10437.00
+1006105,T=13.41585|37.94669|5029.20000,IAS=105.94493,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10484.00
+1006105,T=13.34241|37.96642|5029.20000,IAS=99.86933,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10531.00
+1006105,T=13.27511|37.97642|4857.59760,IAS=99.28801,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10566.00
+1006105,T=13.21512|37.98276|5086.19760,IAS=100.51239,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10607.00
+1006105,T=13.15654|37.98609|5086.19760,IAS=102.01971,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10612.00
+1006105,T=13.11342|37.98883|5086.19760,IAS=103.62993,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10752.00
+1006105,T=13.03264|37.99124|5029.20000,IAS=97.77554,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10764.00
+1006105,T=12.97048|37.99162|5029.20000,IAS=96.10359,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10776.00
+1006105,T=12.93140|37.97382|5029.20000,IAS=95.62515,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10788.00
+1006105,T=12.90343|37.95439|5029.20000,IAS=95.91324,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10949.00
+1006105,T=12.79523|37.95744|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#10983.00
+1006105,T=12.70076|37.96049|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11054.00
+1006105,T=12.59538|37.96458|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11157.00
+1006105,T=12.47668|37.96963|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11180.00
+1006105,T=12.37957|37.97384|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11196.00
+1006105,T=12.29824|37.97739|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11215.00
+1006105,T=12.23363|37.98024|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11238.00
+1006105,T=12.17628|37.98282|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11246.00
+1006105,T=12.12922|37.98494|4886.24880,IAS=139.54338,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11342.00
+1006105,T=12.16046|37.91688|0.00000,IAS=128.77089,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11366.00
+1006105,T=12.17667|37.86309|0.00000,IAS=126.23467,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11446.00
+1006105,T=12.18253|37.79430|0.00000,IAS=115.17409,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11586.00
+1006105,T=12.15541|37.71849|0.00000,IAS=102.40555,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11645.00
+1006105,T=12.12417|37.65257|0.00000,IAS=101.21718,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11668.00
+1006105,T=12.09654|37.59998|0.00000,IAS=101.21718,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11738.00
+1006105,T=12.06182|37.54784|3943.19760,IAS=103.75854,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11750.00
+1006105,T=12.03404|37.50732|3943.19760,IAS=103.75854,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11936.00
+1006105,T=11.99896|37.48580|3943.19760,IAS=94.59626,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#11948.00
+1006105,T=11.97571|37.47199|3943.19760,IAS=94.59626,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12017.00
+1006105,T=11.97465|37.44657|3943.19760,IAS=84.98127,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12112.00
+1006105,T=11.95201|37.43811|3943.19760,IAS=70.35044,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12193.00
+1006105,T=11.91933|37.41898|3828.89760,IAS=76.75014,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12321.00
+1006105,T=11.86987|37.37449|3371.69760,IAS=111.40835,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12520.00
+1006105,T=11.79332|37.29767|2685.89760,IAS=115.39530,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12531.00
+1006105,T=11.73460|37.23868|2685.89760,IAS=117.90579,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12543.00
+1006105,T=11.68950|37.19287|1885.95000,IAS=117.90579,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12554.00
+1006105,T=11.65423|37.15671|1885.95000,IAS=117.90579,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12566.00
+1006105,T=11.62552|37.12749|1885.95000,IAS=120.06132,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12578.00
+1006105,T=11.60186|37.10321|1885.95000,IAS=121.50691,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12590.00
+1006105,T=11.58219|37.08242|1885.95000,IAS=122.98337,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12683.00
+1006105,T=11.55309|37.03985|1885.95000,IAS=129.64030,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12823.00
+1006105,T=11.51208|36.96772|1885.95000,IAS=132.31027,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#12997.00
+1006105,T=11.45519|36.85725|800.10000,IAS=145.07367,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#13056.00
+1006105,T=11.40213|36.75753|800.10000,IAS=147.22920,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#13114.00
+1006105,T=11.35308|36.66586|800.10000,IAS=147.22920,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14489.00
+1006105,T=11.53054|36.60387|3371.69760,IAS=169.89567,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14583.00
+1006105,T=11.70236|36.57663|3371.69760,IAS=169.02626,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14617.00
+1006105,T=11.84505|36.56172|3371.69760,IAS=171.27953,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14629.00
+1006105,T=11.95312|36.55189|3371.69760,IAS=164.87983,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14699.00
+1006105,T=12.06969|36.54362|3371.69760,IAS=172.02033,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14710.00
+1006105,T=12.16121|36.53787|3371.69760,IAS=173.85176,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14722.00
+1006105,T=12.23412|36.53413|3257.39760,IAS=173.91349,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14838.00
+1006105,T=12.33940|36.54107|3086.10000,IAS=124.65532,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14850.00
+1006105,T=12.42145|36.54759|3086.10000,IAS=130.41197,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14908.00
+1006105,T=12.50605|36.55955|3086.10000,IAS=139.05980,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14931.00
+1006105,T=12.57867|36.57047|2971.80000,IAS=146.39065,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14943.00
+1006105,T=12.63932|36.57939|2971.80000,IAS=157.48724,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#14989.00
+1006105,T=12.71121|36.58724|2971.80000,IAS=174.94238,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#15245.00
+1006105,T=12.88579|36.61199|2685.89760,IAS=159.63762,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#15361.00
+1006105,T=13.06697|36.63535|2800.19760,IAS=159.15919,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#15512.00
+1006105,T=13.27239|36.65366|2914.49760,IAS=161.02148,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#15640.00
+1006105,T=13.48320|36.66616|2343.15000,IAS=157.32262,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#15722.00
+1006105,T=13.67745|36.67570|2628.90000,IAS=164.59174,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#15757.00
+1006105,T=13.83571|36.67999|2628.90000,IAS=163.23874,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#15768.00
+1006105,T=13.95749|36.68300|2628.90000,IAS=164.91069,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#15978.00
+1006105,T=14.11841|36.74133|2743.20000,IAS=159.15919,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#16001.00
+1006105,T=14.24258|36.79097|2743.20000,IAS=159.15919,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
+#16389.00
+1006105,T=14.45654|37.05676|6086.55120,IAS=185.48852,Name=AM210M,Squawk=AM210,Label=Aircraft under command and control of a naval task force or group
